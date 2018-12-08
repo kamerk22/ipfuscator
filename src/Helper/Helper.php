@@ -7,21 +7,29 @@
  */
 
 
-namespace kamerk22\IPFuscator;
+namespace kamerk22\IPFuscator\Helper;
 
+
+use kamerk22\IPFuscator\Exception\InvalidArgument;
 
 class Helper
 {
+
     /**
      * getParts
      *
      * @param string $ip
      *
      * @return array
+     * @throws InvalidArgument
      */
     public static function getParts(string $ip): array
     {
-        return explode('.', $ip);
+        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+            return explode('.', $ip);
+        }
+        throw InvalidArgument::invalidIp('IP Adress format is invalid.');
+
     }
 
     /**
@@ -30,6 +38,7 @@ class Helper
      * @param string $ip
      *
      * @return array
+     * @throws InvalidArgument
      */
     public static function getHexParts(string $ip): array
     {
@@ -46,12 +55,13 @@ class Helper
      * @param string $ip
      *
      * @return array
+     * @throws InvalidArgument
      */
     public static function getOctalParts(string $ip): array
     {
         $octParts = [];
         foreach (self::getParts($ip) as $part) {
-            $hexParts[] = '0' . decoct((int)$part);
+            $octParts[] = '0' . decoct((int)$part);
         }
         return $octParts;
     }
