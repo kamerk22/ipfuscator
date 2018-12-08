@@ -50,7 +50,7 @@ class IPFuscatorTest extends TestCase
         );
     }
 
-    public function testCanBeValidFullHex()
+    public function testCanBeValidFullHex(): void
     {
         $this->assertEquals(
             '0x7f.0x0.0x0.0x1',
@@ -64,5 +64,41 @@ class IPFuscatorTest extends TestCase
             '0177.00.00.01',
             IPFuscator::getFullOct($this->ip)
         );
+    }
+
+    public function testCanBeValidRandomHexPad(): void
+    {
+        try {
+            $this->assertNotEmpty(IPFuscator::getRandomHexPad($this->ip));
+        } catch (InvalidArgument $e) {
+        } catch (Exception $e) {
+        }
+    }
+
+    public function testCanBeValidRandomOctPad(): void
+    {
+        try {
+            $this->assertNotEmpty(IPFuscator::getRandomOctPad($this->ip));
+        } catch (InvalidArgument $e) {
+        } catch (Exception $e) {
+        }
+    }
+
+    public function testCanBeValidRandomBase(): void
+    {
+        try {
+            $this->assertNotEmpty(IPFuscator::getRandomBase($this->ip));
+        } catch (InvalidArgument $e) {
+        } catch (Exception $e) {
+        }
+    }
+
+    public function testCanBeValidRandomBaseWithPad(): void
+    {
+        try {
+            $this->assertNotEmpty(IPFuscator::getRandomBaseWithRandomPad($this->ip));
+        } catch (InvalidArgument $e) {
+        } catch (Exception $e) {
+        }
     }
 }

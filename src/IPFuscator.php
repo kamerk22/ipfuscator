@@ -102,7 +102,7 @@ class IPFuscator
     }
 
     /**
-     * getRandomOctalPad
+     * getRandomOctPad
      *
      * @param string $ip
      *
@@ -110,7 +110,7 @@ class IPFuscator
      * @throws \Exception
      * @throws InvalidArgument
      */
-    public static function getRandomOctalPad(string $ip): string
+    public static function getRandomOctPad(string $ip): string
     {
         $randOctal = '';
         foreach (Helper::getOctalParts($ip) as $parts) {
