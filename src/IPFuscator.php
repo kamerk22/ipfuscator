@@ -157,7 +157,7 @@ class IPFuscator
      * @throws \Exception
      * @throws InvalidArgument
      */
-    public static function getRandomBaseWithPad(string $ip): string
+    public static function getRandomBaseWithRandomPad(string $ip): string
     {
         $parts = Helper::getParts($ip);
         $Octparts = Helper::getOctalParts($ip);
