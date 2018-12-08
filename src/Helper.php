@@ -12,11 +12,25 @@ namespace kamerk22\IPFuscator;
 
 class Helper
 {
+    /**
+     * getParts
+     *
+     * @param string $ip
+     *
+     * @return array
+     */
     public static function getParts(string $ip): array
     {
         return explode('.', $ip);
     }
 
+    /**
+     * getHexParts
+     *
+     * @param string $ip
+     *
+     * @return array
+     */
     public static function getHexParts(string $ip): array
     {
         $hexParts = [];
@@ -26,6 +40,13 @@ class Helper
         return $hexParts;
     }
 
+    /**
+     * getOctalParts
+     *
+     * @param string $ip
+     *
+     * @return array
+     */
     public static function getOctalParts(string $ip): array
     {
         $octParts = [];
