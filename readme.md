@@ -1,9 +1,10 @@
 # IPFuscator
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/?branch=master)
+[![Build Status][ico-travis]][link-travis]
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
 IPFuscation is a technique that allows for IP addresses to be represented in hexadecimal or decimal instead of the decimal encoding we are used to. IPFuscator allows us to easily convert to these alternative formats that are interpreted in the same way.
 
@@ -46,12 +47,11 @@ license. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/kamerk22/ipfuscator.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/kamerk22/ipfuscator.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/kamerk22/ipfuscator/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-travis]: https://img.shields.io/travis/com/kamerk22/ipfuscator.svg?style=flat-square
+
 
 [link-packagist]: https://packagist.org/packages/kamerk22/ipfuscator
 [link-downloads]: https://packagist.org/packages/kamerk22/ipfuscator
 [link-travis]: https://travis-ci.org/kamerk22/ipfuscator
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/kamerk22
 [link-contributors]: ../../contributors]

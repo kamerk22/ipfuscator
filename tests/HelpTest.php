@@ -17,6 +17,10 @@ class HelpTest extends TestCase
 {
     public $ip = '127.0.0.1';
 
+    /**
+     * testCanBeUsedWithParts
+     * @throws \kamerk22\IPFuscator\Exception\InvalidArgument
+     */
     public function testCanBeUsedWithParts(): void
     {
         $parts = Helper::getParts($this->ip);
@@ -25,6 +29,10 @@ class HelpTest extends TestCase
         $this->assertEquals('1', $parts[3]);
     }
 
+    /**
+     * testCanBeUsedWithHexParts
+     * @throws \kamerk22\IPFuscator\Exception\InvalidArgument
+     */
     public function testCanBeUsedWithHexParts(): void
     {
         $parts = Helper::getHexParts($this->ip);
@@ -33,6 +41,10 @@ class HelpTest extends TestCase
         $this->assertEquals('0x1', $parts[3]);
     }
 
+    /**
+     * testCanBeUsedWithOctParts
+     * @throws \kamerk22\IPFuscator\Exception\InvalidArgument
+     */
     public function testCanBeUsedWithOctParts(): void
     {
         $parts = Helper::getOctalParts($this->ip);

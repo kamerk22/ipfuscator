@@ -15,17 +15,29 @@ class IPFuscatorTest extends TestCase
 {
     public $ip = '127.0.0.1';
 
+    /**
+     * testCanBeUsedWithValidIp
+     * @throws InvalidArgument
+     */
     public function testCanBeUsedWithValidIp(): void
     {
         $this->assertNotEmpty(IPFuscator::getDecimal($this->ip));
     }
 
+    /**
+     * testCanBeUsedWithInvalidIp
+     * @throws InvalidArgument
+     */
     public function testCanBeUsedWithInvalidIp(): void
     {
         $this->expectException(InvalidArgument::class);
         IPFuscator::getDecimal('in.va.lid.ip');
     }
 
+    /**
+     * testCanBeValidDecimal
+     * @throws InvalidArgument
+     */
     public function testCanBeValidDecimal(): void
     {
         $this->assertEquals(
@@ -34,6 +46,10 @@ class IPFuscatorTest extends TestCase
         );
     }
 
+    /**
+     * testCanBeValidHexadecimal
+     * @throws InvalidArgument
+     */
     public function testCanBeValidHexadecimal(): void
     {
         $this->assertEquals(
@@ -42,6 +58,10 @@ class IPFuscatorTest extends TestCase
         );
     }
 
+    /**
+     * testCanBeValidOctal
+     * @throws InvalidArgument
+     */
     public function testCanBeValidOctal(): void
     {
         $this->assertEquals(
@@ -50,6 +70,10 @@ class IPFuscatorTest extends TestCase
         );
     }
 
+    /**
+     * testCanBeValidFullHex
+     * @throws InvalidArgument
+     */
     public function testCanBeValidFullHex(): void
     {
         $this->assertEquals(
@@ -58,6 +82,10 @@ class IPFuscatorTest extends TestCase
         );
     }
 
+    /**
+     * testCanBeValidFullOct
+     * @throws InvalidArgument
+     */
     public function testCanBeValidFullOct(): void
     {
         $this->assertEquals(
@@ -66,39 +94,40 @@ class IPFuscatorTest extends TestCase
         );
     }
 
+
+    /**
+     * testCanBeValidRandomHexPad
+     * @throws InvalidArgument
+     */
     public function testCanBeValidRandomHexPad(): void
     {
-        try {
-            $this->assertNotEmpty(IPFuscator::getRandomHexPad($this->ip));
-        } catch (InvalidArgument $e) {
-        } catch (Exception $e) {
-        }
+        $this->assertNotEmpty(IPFuscator::getRandomHexPad($this->ip));
     }
 
+    /**
+     * testCanBeValidRandomOctPad
+     * @throws InvalidArgument
+     */
     public function testCanBeValidRandomOctPad(): void
     {
-        try {
-            $this->assertNotEmpty(IPFuscator::getRandomOctPad($this->ip));
-        } catch (InvalidArgument $e) {
-        } catch (Exception $e) {
-        }
+        $this->assertNotEmpty(IPFuscator::getRandomOctPad($this->ip));
     }
 
+    /**
+     * testCanBeValidRandomBase
+     * @throws InvalidArgument
+     */
     public function testCanBeValidRandomBase(): void
     {
-        try {
-            $this->assertNotEmpty(IPFuscator::getRandomBase($this->ip));
-        } catch (InvalidArgument $e) {
-        } catch (Exception $e) {
-        }
+        $this->assertNotEmpty(IPFuscator::getRandomBase($this->ip));
     }
 
+    /**
+     * testCanBeValidRandomBaseWithPad
+     * @throws InvalidArgument
+     */
     public function testCanBeValidRandomBaseWithPad(): void
     {
-        try {
-            $this->assertNotEmpty(IPFuscator::getRandomBaseWithRandomPad($this->ip));
-        } catch (InvalidArgument $e) {
-        } catch (Exception $e) {
-        }
+        $this->assertNotEmpty(IPFuscator::getRandomBaseWithRandomPad($this->ip));
     }
 }
