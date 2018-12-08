@@ -15,21 +15,18 @@ class IPFuscatorTest extends TestCase
 {
     public $ip = '127.0.0.1';
 
-    public function testCanBeUsedWithValidIp()
+    public function testCanBeUsedWithValidIp(): void
     {
-        $this->assertIsString(
-            IPFuscator::class,
-            IPFuscator::getDecimal($this->ip)
-        );
+        $this->assertNotEmpty(IPFuscator::getDecimal($this->ip));
     }
 
-    public function testCanBeUsedWithInvalidIp()
+    public function testCanBeUsedWithInvalidIp(): void
     {
         $this->expectException(InvalidArgument::class);
         IPFuscator::getDecimal('in.va.lid.ip');
     }
 
-    public function testCanBeValidDecimal()
+    public function testCanBeValidDecimal(): void
     {
         $this->assertEquals(
             '2130706433',
@@ -37,7 +34,7 @@ class IPFuscatorTest extends TestCase
         );
     }
 
-    public function testCanBeValidHexadecimal()
+    public function testCanBeValidHexadecimal(): void
     {
         $this->assertEquals(
             '0x7f000001',
@@ -45,7 +42,7 @@ class IPFuscatorTest extends TestCase
         );
     }
 
-    public function testCanBeValidOctal()
+    public function testCanBeValidOctal(): void
     {
         $this->assertEquals(
             '017700000001',
@@ -61,7 +58,7 @@ class IPFuscatorTest extends TestCase
         );
     }
 
-    public function testCanBeValidFullOct()
+    public function testCanBeValidFullOct(): void
     {
         $this->assertEquals(
             '0177.00.00.01',
