@@ -1,3 +1,4 @@
+
 # IPFuscator
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/?branch=master)
@@ -6,11 +7,15 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-IPFuscation is a technique that allows for IP addresses to be represented in hexadecimal or decimal instead of the decimal encoding we are used to. IPFuscator allows us to easily convert to these alternative formats that are interpreted in the same way.
+IPFuscation is a technique that allows for IP addresses to be represented in hexadecimal or decimal instead of the decimal encoding we are used to. 
+
+This package will provide simple and easy API convert IP to alternative formats that are interpreted in the same way.
+
+Insired by [https://github.com/vysec/IPFuscator](https://github.com/vysec/IPFuscator) in Python.
 
 ## Installation
 
-Via Composer
+You can install this package via Composer.
 
 ``` bash
 $ composer require kamerk22/ipfuscator
@@ -18,6 +23,44 @@ $ composer require kamerk22/ipfuscator
 
 ## Usage
 
+```php
+use kamerk22\IPFuscator\IPFuscator;
+```
+
+### Get Decimal 
+```php
+IPFuscator::getDecimal($ip);
+```
+
+### Get Octal
+```php
+IPFuscator::getOctal($ip);
+```
+
+### Get Hexadecimal
+```php
+IPFuscator::getHexadecimal($ip);
+```
+
+### Get Full Octal
+```php
+IPFuscator::getFullOct($ip);
+```
+
+### Get Full Hexadecimal
+```php
+IPFuscator::getFullHex($ip);
+```
+
+### Get Random Base
+```php
+IPFuscator::getRandomBase($ip);
+```
+
+### Get Random Base With Random Pad
+```php
+IPFuscator::getRandomBaseWithRandomPad($ip);
+```
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
@@ -32,18 +75,19 @@ $ composer test
 
 Please see [contributing.md](contributing.md) for details and a todolist.
 
+
 ## Security
 
-If you discover any security related issues, please email author email instead of using the issue tracker.
+If you discover any security related issues, please email kashyapk62@gmail.com instead of using the issue tracker.
 
 ## Credits
 
-- [author name][link-author]
+- [Kashyap Merai][link-author]
 - [All Contributors][link-contributors]
 
 ## License
 
-license. Please see the [license file](license.md) for more information.
+MIT. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/kamerk22/ipfuscator.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/kamerk22/ipfuscator.svg?style=flat-square
