@@ -12,7 +12,7 @@ IPFuscation is a technique that allows for IP addresses to be represented in hex
 
 This package will provide simple and easy API convert IP to alternative formats that are interpreted in the same way.
 
-Insired by [https://github.com/vysec/IPFuscator](https://github.com/vysec/IPFuscator) in Python.
+Inspired by [https://github.com/vysec/IPFuscator](https://github.com/vysec/IPFuscator) in Python.
 
 ![SS](https://i.imgur.com/X9Yz5Ek.png)
 
