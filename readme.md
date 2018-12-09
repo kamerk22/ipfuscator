@@ -3,6 +3,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/?branch=master)
 [![Build Status][ico-travis]][link-travis]
+[![Code Coverage](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/kamerk22/ipfuscator/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -12,6 +13,8 @@ IPFuscation is a technique that allows for IP addresses to be represented in hex
 This package will provide simple and easy API convert IP to alternative formats that are interpreted in the same way.
 
 Insired by [https://github.com/vysec/IPFuscator](https://github.com/vysec/IPFuscator) in Python.
+
+![SS](https://i.imgur.com/X9Yz5Ek.png)
 
 ## Installation
 
@@ -50,6 +53,16 @@ IPFuscator::getFullOct($ip);
 ### Get Full Hexadecimal
 ```php
 IPFuscator::getFullHex($ip);
+```
+
+### Get Random Pad Octal
+```php
+IPFuscator::getRandomOctPad($ip);
+```
+
+### Get Random Pad Hexadecimal
+```php
+IPFuscator::getRandomHexPad($ip);
 ```
 
 ### Get Random Base
