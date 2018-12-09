@@ -21,7 +21,8 @@ before_script:
 - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
 
 script:
-- phpunit --coverage-text --coverage-clover=coverage.clover
+- mkdir -p tests/logs
+- php vendor/bin/phpunit -c phpunit.xml.dist
 
 after_script:
-- php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
+- php bin/php-coveralls -v --exclude-no-stmt
